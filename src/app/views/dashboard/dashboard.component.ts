@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-type statusSensorType = {
-  title: string;
-  temperature: number;
-  consumption: number;
-}
+import { statusSensorType } from './models/sensor';
 
 @Component({
   templateUrl: 'dashboard.component.html'
