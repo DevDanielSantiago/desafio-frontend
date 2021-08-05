@@ -6,5 +6,11 @@
             [temperature]="sensor.temperature"
             [consumption]="sensor.consumption"
         ></app-card-stats>
+        <app-card-stats *ngFor="let higherConsumption of getSensorHigherConsumption()"
+            class="col-lg-3 col-md-6 col-sm-12"
+            [title]="'Maior Consumor'"
+            [temperature]="higherConsumption.temperature"
+            [consumption]="higherConsumption.consumption"
+        ></app-card-stats>
     </div>
 </div>
