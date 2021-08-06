@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 })
 export class SensorsService {
 
+  private sensorInterval: number = 5000;
+
   constructor() { }
 
   generateConsumption(min: number, max: number) {
@@ -24,7 +26,7 @@ export class SensorsService {
           temperature: this.generateTemperature(30, 42),
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -36,7 +38,7 @@ export class SensorsService {
           consumption: this.generateConsumption(2, 5)
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -48,7 +50,7 @@ export class SensorsService {
           temperature: this.generateTemperature(30, 42),
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -60,7 +62,7 @@ export class SensorsService {
           consumption: this.generateConsumption(2, 5)
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -72,7 +74,7 @@ export class SensorsService {
           temperature: this.generateTemperature(30, 42),
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -84,7 +86,7 @@ export class SensorsService {
           consumption: this.generateConsumption(2, 5)
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -96,7 +98,7 @@ export class SensorsService {
           temperature: this.generateTemperature(30, 42),
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 
@@ -108,7 +110,7 @@ export class SensorsService {
           consumption: this.generateConsumption(2, 5)
         }
         subscribe.next(values);
-      }, 5000)
+      }, this.sensorInterval)
     });
   }
 }
