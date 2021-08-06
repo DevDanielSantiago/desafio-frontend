@@ -13,30 +13,9 @@ import { statusSensorType } from './models/sensor';
 })
 export class DashboardComponent implements OnInit {
 
-	constructor(private sensorsService: SensorsService) {}
+  constructor(private sensorsService: SensorsService) {}
 
-  public sensorStatus: statusSensorType[] = [
-    {
-      title: 'Quarto 1',
-      temperature: 0,
-      consumption: 0
-    },
-    {
-      title: 'Quarto 2',
-      temperature: 0,
-      consumption: 0
-    },
-    {
-      title: 'Sala',
-      temperature: 0,
-      consumption: 0
-    },
-    {
-      title: 'Cozinha',
-      temperature: 0,
-      consumption: 0
-    }
-  ]
+  public sensorStatus: statusSensorType[] = initialSensorState;
 
   public chartElements = 10;
   public chartSensorOne: string[] = [];
