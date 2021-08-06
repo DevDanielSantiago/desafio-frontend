@@ -69,7 +69,74 @@ export class DashboardComponent implements OnInit {
 
 	@ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+		this.getSensorTemperatureOne();
+		this.getSensorTemperatureTwo();
+		this.getSensorTemperatureTree();
+		this.getSensorTemperatureFour();
+
+		this.getSensorConsumptionOne();
+		this.getSensorConsumptionTwo();
+		this.getSensorConsumptionTree();
+		this.getSensorConsumptionFour();
+  }
+
+	getSensorTemperatureOne() {
+		this.sensorsService.sensorTemperatureOne().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorTemperatureTwo() {
+		this.sensorsService.sensorTemperatureTwo().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorTemperatureTree() {
+		this.sensorsService.sensorTemperatureTree().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorTemperatureFour() {
+		this.sensorsService.sensorTemperatureFour().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorConsumptionOne() {
+		this.sensorsService.sensorConsumptionOne().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorConsumptionTwo() {
+		this.sensorsService.sensorConsumptionTwo().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorConsumptionTree() {
+		this.sensorsService.sensorConsumptionTree().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	getSensorConsumptionFour() {
+		this.sensorsService.sensorConsumptionFour().subscribe((response) => {
+			this.updateStatusSensor(response);
+		})
+	}
+
+	updateStatusSensor(sensorEmmited: any) {
+		this.sensorStatus = this.sensorStatus.map((sensor) => {
+			if (sensor.title === sensorEmmited.title)
+				return Object.assign({}, sensor, sensorEmmited);
+
+			return sensor;
+		})
+	}
 
   getSensorHigherConsumption(): statusSensorType[] {
     try {
