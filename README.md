@@ -1,4 +1,4 @@
-# DESAFIO DE FRONTEND!
+# DESAFIO DE FRONTEND
 
 Esse projeto web tem como objetivo criar um sistema web que ajude **Chico** a monitorar os sensores de temperatura e consumo de energia que instalou em sua residência, esses sensores estão dispostos em quatro ambientes de sua residência, sendo eles dois quartos, a sala e a cozinha.
 
@@ -22,7 +22,7 @@ A execução do projeto é bem simples, sendo necessário estar apenas com as te
 * Para compilação em modo de desenvolvimento é utilizado o comando ***ng serve --open***.
 * Para criação da build de produção é necessário utilização do comando ***npm run build***.
 
-Observação: Em caso de criação da build de produção será necessário utilização de um outra biblioteca node instalada globalmente em seu sistema operacional, recomendo utilização da biblioteca ***http-serve***.
+Observação: Em caso de criação da build de produção será necessário utilização de um outra biblioteca node instalada globalmente em seu sistema operacional, recomendo utilização da biblioteca ***http-server***.
 
 Observação 2: Após a execução do projeto não é necessário que o usuário realize nenhuma operação visto que todos os dados atualizam automaticamente.
 
