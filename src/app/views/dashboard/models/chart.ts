@@ -5,6 +5,6 @@ export type ChartColorsType = {
 }
 
 export type ChartDataType = {
-    data: number[];
+    data: string[];
     label: string;
 }
