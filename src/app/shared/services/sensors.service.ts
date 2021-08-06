@@ -67,7 +67,7 @@ export class SensorsService {
     });
   }
 
-  sensorTemperatureTree(): Observable<SensorTemperatureType> {
+  sensorTemperatureThree(): Observable<SensorTemperatureType> {
     return new Observable((subscribe) => {
       setInterval(() => {
         const values: SensorTemperatureType = {
@@ -79,7 +79,7 @@ export class SensorsService {
     });
   }
 
-  sensorConsumptionTree(): Observable<SensorConsumptionType> {
+  sensorConsumptionThree(): Observable<SensorConsumptionType> {
     return new Observable((subscribe) => {
       setInterval(() => {
         const values: SensorConsumptionType = {

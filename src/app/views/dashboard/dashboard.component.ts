@@ -18,10 +18,9 @@ export class DashboardComponent implements OnInit {
 
   public sensorStatus: statusSensorType[] = initialSensorState;
 
-  public chartElements = 10;
   public chartSensorOne: string[] = [];
   public chartSensorTwo: string[] = [];
-  public chartSensorTree: string[] = [];
+  public chartSensorThree: string[] = [];
   public chartSensorFour: string[] = [];
   public mainChartData: ChartDataType[] = [
     {
@@ -33,7 +32,7 @@ export class DashboardComponent implements OnInit {
       label: 'Quarto 2'
     },
     {
-      data: this.chartSensorTree,
+      data: this.chartSensorThree,
       label: 'Sala'
     },
     {
@@ -53,12 +52,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 		this.getSensorTemperatureOne();
 		this.getSensorTemperatureTwo();
-		this.getSensorTemperatureTree();
+		this.getSensorTemperatureThree();
 		this.getSensorTemperatureFour();
 
 		this.getSensorConsumptionOne();
 		this.getSensorConsumptionTwo();
-		this.getSensorConsumptionTree();
+		this.getSensorConsumptionThree();
 		this.getSensorConsumptionFour();
   }
 
@@ -74,8 +73,8 @@ export class DashboardComponent implements OnInit {
 		})
 	}
 
-	getSensorTemperatureTree() {
-		this.sensorsService.sensorTemperatureTree().subscribe((response) => {
+	getSensorTemperatureThree() {
+		this.sensorsService.sensorTemperatureThree().subscribe((response) => {
 			this.updateStatusSensor(response);
 		})
 	}
@@ -100,8 +99,8 @@ export class DashboardComponent implements OnInit {
 		})
 	}
 
-	getSensorConsumptionTree() {
-		this.sensorsService.sensorConsumptionTree().subscribe((response) => {
+	getSensorConsumptionThree() {
+		this.sensorsService.sensorConsumptionThree().subscribe((response) => {
 			this.updateStatusSensor(response);
 			this.updateSensorCharts(response);
 		})
@@ -145,11 +144,11 @@ export class DashboardComponent implements OnInit {
 		}
 
 		if (sensorEmmited.title === 'Sala') {
-			if (this.chartSensorTree.length < 12) {
-				this.chartSensorTree.push(sensorEmmited.consumption);
+			if (this.chartSensorThree.length < 12) {
+				this.chartSensorThree.push(sensorEmmited.consumption);
 			} else {
-				this.chartSensorTree.shift();
-				this.chartSensorTree.push(sensorEmmited.consumption);
+				this.chartSensorThree.shift();
+				this.chartSensorThree.push(sensorEmmited.consumption);
 				this.chart.chart.update()
 			}
 		}
