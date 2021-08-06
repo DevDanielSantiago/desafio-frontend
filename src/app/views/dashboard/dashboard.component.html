@@ -11,7 +11,11 @@
             [title]="'Maior Consumor'"
             [temperature]="higherConsumption.temperature"
             [consumption]="higherConsumption.consumption"
-        ></app-card-stats>
+        >
+            <h5 class="card-title text-uppercase text-danger mb-1 higher-consumption mb-3">
+                {{higherConsumption.title}}
+            </h5>
+        </app-card-stats>
     </div>
 
     <div class="row">
