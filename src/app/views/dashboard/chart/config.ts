@@ -2,21 +2,22 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { ChartColorsType } from '../models/chart';
 
-export const chartLegend = false;
-export const chartType = 'line';
+export const chartLegend: boolean = false;
+export const chartType: string = 'line';
 
 export const chartLabels: string[] = [
-    '0.0 segundos',
-    '0.5 segundos',
-    '1.0 segundos',
-    '1.5 segundos',
-    '2.0 segundos',
-    '2.5 segundos',
-    '3.0 segundos',
-    '3.5 segundos',
-    '4.0 segundos',
-    '4.5 segundos',
-    '5.0 segundos',
+    '5 segundos',
+    '10 segundos',
+    '15 segundos',
+    '20 segundos',
+    '25 segundos',
+    '30 segundos',
+    '35 segundos',
+    '40 segundos',
+    '45 segundos',
+    '50 segundos',
+    '55 segundos',
+    '60 segundos'
 ];
 
 export const chartColours: ChartColorsType[] = [
