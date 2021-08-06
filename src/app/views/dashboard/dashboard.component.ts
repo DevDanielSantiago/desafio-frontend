@@ -108,24 +108,28 @@ export class DashboardComponent implements OnInit {
 	getSensorConsumptionOne() {
 		this.sensorsService.sensorConsumptionOne().subscribe((response) => {
 			this.updateStatusSensor(response);
+			this.updateSensorCharts(response);
 		})
 	}
 
 	getSensorConsumptionTwo() {
 		this.sensorsService.sensorConsumptionTwo().subscribe((response) => {
 			this.updateStatusSensor(response);
+			this.updateSensorCharts(response);
 		})
 	}
 
 	getSensorConsumptionTree() {
 		this.sensorsService.sensorConsumptionTree().subscribe((response) => {
 			this.updateStatusSensor(response);
+			this.updateSensorCharts(response);
 		})
 	}
 
 	getSensorConsumptionFour() {
 		this.sensorsService.sensorConsumptionFour().subscribe((response) => {
 			this.updateStatusSensor(response);
+			this.updateSensorCharts(response);
 		})
 	}
 
@@ -136,6 +140,48 @@ export class DashboardComponent implements OnInit {
 
 			return sensor;
 		})
+	}
+
+	updateSensorCharts(sensorEmmited: any) {
+		if (sensorEmmited.title === 'Quarto 1') {
+			if (this.chartSensorOne.length < 12) {
+				this.chartSensorOne.push(sensorEmmited.consumption);
+			} else {
+				this.chartSensorOne.shift();
+				this.chartSensorOne.push(sensorEmmited.consumption);
+				this.chart.chart.update()
+			}
+		}
+
+		if (sensorEmmited.title === 'Quarto 2') {
+			if (this.chartSensorTwo.length < 12) {
+				this.chartSensorTwo.push(sensorEmmited.consumption);
+			} else {
+				this.chartSensorTwo.shift();
+				this.chartSensorTwo.push(sensorEmmited.consumption);
+				this.chart.chart.update()
+			}
+		}
+
+		if (sensorEmmited.title === 'Sala') {
+			if (this.chartSensorTree.length < 12) {
+				this.chartSensorTree.push(sensorEmmited.consumption);
+			} else {
+				this.chartSensorTree.shift();
+				this.chartSensorTree.push(sensorEmmited.consumption);
+				this.chart.chart.update()
+			}
+		}
+
+		if (sensorEmmited.title === 'Cozinha') {
+			if (this.chartSensorFour.length < 12) {
+				this.chartSensorFour.push(sensorEmmited.consumption);
+			} else {
+				this.chartSensorFour.shift();
+				this.chartSensorFour.push(sensorEmmited.consumption);
+				this.chart.chart.update()
+			}
+		}
 	}
 
   getSensorHigherConsumption(): statusSensorType[] {
