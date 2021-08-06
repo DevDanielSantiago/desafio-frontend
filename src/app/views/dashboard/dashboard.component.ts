@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BaseChartDirective } from 'ng2-charts';
+import { SensorsService } from '../../shared/services/sensors.service';
+
+import { chartColours, chartLabels, chartLegend, chartOptions, chartType } from './chart/config';
+import { ChartColorsType, ChartDataType } from './models/chart';
 
 import { statusSensorType } from './models/sensor';
 
@@ -7,28 +12,62 @@ import { statusSensorType } from './models/sensor';
 })
 export class DashboardComponent implements OnInit {
 
+	constructor(private sensorsService: SensorsService) {}
+
   public sensorStatus: statusSensorType[] = [
     {
       title: 'Quarto 1',
-      temperature: 30,
-      consumption: 2
+      temperature: 0,
+      consumption: 0
     },
     {
       title: 'Quarto 2',
-      temperature: 32,
-      consumption: 3
+      temperature: 0,
+      consumption: 0
     },
     {
       title: 'Sala',
-      temperature: 35,
-      consumption: 3.4
+      temperature: 0,
+      consumption: 0
     },
     {
       title: 'Cozinha',
-      temperature: 38,
-      consumption: 4.1
+      temperature: 0,
+      consumption: 0
     }
   ]
+
+  public chartElements = 10;
+  public chartSensorOne: string[] = [];
+  public chartSensorTwo: string[] = [];
+  public chartSensorTree: string[] = [];
+  public chartSensorFour: string[] = [];
+  public mainChartData: ChartDataType[] = [
+    {
+      data: this.chartSensorOne,
+      label: 'Quardo 1'
+    },
+    {
+      data: this.chartSensorTwo,
+      label: 'Quarto 2'
+    },
+    {
+      data: this.chartSensorTree,
+      label: 'Sala'
+    },
+    {
+      data: this.chartSensorFour,
+      label: 'Cozinha'
+    }
+  ];
+  
+  public mainChartLabels: string[] = chartLabels;
+  public mainChartOptions: any = chartOptions;
+  public mainChartColours: ChartColorsType[] = chartColours;
+  public mainChartLegend: boolean = chartLegend;
+  public mainChartType: string = chartType;
+
+	@ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
   ngOnInit(): void {}
 

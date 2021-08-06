@@ -13,4 +13,29 @@
             [consumption]="higherConsumption.consumption"
         ></app-card-stats>
     </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <h4 class="card-title mb-0">Tempo do sensores</h4>
+                            <div class="small text-muted"></div>
+                        </div><!--/.col-->
+                    </div><!--/.row-->
+                    <div class="chart-wrapper" style="height:300px; margin-top:40px;">
+                        <canvas baseChart class="chart"
+                            [datasets]="mainChartData"
+                            [labels]="mainChartLabels"
+                            [options]="mainChartOptions"
+                            [colors]="mainChartColours"
+                            [legend]="mainChartLegend"
+                            [chartType]="mainChartType"
+                        ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
