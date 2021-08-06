@@ -26,8 +26,10 @@ Observação: Em caso de criação da build de produção será necessário util
 
 Observação 2: Após a execução do projeto não é necessário que o usuário realize nenhuma operação visto que todos os dados atualizam automaticamente.
 
-### Imagens do sistema em funcionamento.
+### IMAGENS DO SISTEMA EM FUNCIONAMENTO.
 
-![Cards dos Sensores]()
+#### CARD DOS SENSORES
+![Cards dos Sensores](https://github.com/DevDanielSantiago/desafio-frontend/blob/main/src/assets/readme/imagem1.PNG)
 
-![Grafico do tempo dos sensores]()
+#### GRÁFICO COM TEMPO DOS SENSORES
+![Grafico do tempo dos sensores](https://github.com/DevDanielSantiago/desafio-frontend/blob/main/src/assets/readme/imagem2.PNG)
