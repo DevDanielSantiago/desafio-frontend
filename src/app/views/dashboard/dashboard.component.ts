@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
+import { SensorConsumptionType, SensorTemperatureType } from '../../shared/services/models/sensors';
 import { SensorsService } from '../../shared/services/sensors.service';
 
 import { chartColours, chartLabels, chartLegend, chartOptions, chartType } from './config/charts';
@@ -113,7 +114,7 @@ export class DashboardComponent implements OnInit {
 		})
 	}
 
-	updateStatusSensor(sensorEmmited: any) {
+	updateStatusSensor(sensorEmmited: SensorConsumptionType | SensorTemperatureType) {
 		this.sensorStatus = this.sensorStatus.map((sensor) => {
 			if (sensor.title === sensorEmmited.title)
 				return Object.assign({}, sensor, sensorEmmited);
@@ -122,7 +123,7 @@ export class DashboardComponent implements OnInit {
 		})
 	}
 
-	updateSensorCharts(sensorEmmited: any) {
+	updateSensorCharts(sensorEmmited: SensorConsumptionType) {
 		if (sensorEmmited.title === 'Quarto 1') {
 			if (this.chartSensorOne.length < 12) {
 				this.chartSensorOne.push(sensorEmmited.consumption);

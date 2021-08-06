@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SensorConsumptionType, SensorTemperatureType } from './models/sensors';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,10 @@ export class SensorsService {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  sensorTemperatureOne() {
+  sensorTemperatureOne(): Observable<SensorTemperatureType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorTemperatureType = {
           title: 'Quarto 1',
           temperature: this.generateTemperature(30, 42),
         }
@@ -30,10 +31,10 @@ export class SensorsService {
     });
   }
 
-  sensorConsumptionOne() {
+  sensorConsumptionOne(): Observable<SensorConsumptionType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorConsumptionType = {
           title: 'Quarto 1',
           consumption: this.generateConsumption(2, 5)
         }
@@ -42,10 +43,10 @@ export class SensorsService {
     });
   }
 
-  sensorTemperatureTwo() {
+  sensorTemperatureTwo(): Observable<SensorTemperatureType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorTemperatureType = {
           title: 'Quarto 2',
           temperature: this.generateTemperature(30, 42),
         }
@@ -54,10 +55,10 @@ export class SensorsService {
     });
   }
 
-  sensorConsumptionTwo() {
+  sensorConsumptionTwo(): Observable<SensorConsumptionType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorConsumptionType = {
           title: 'Quarto 2',
           consumption: this.generateConsumption(2, 5)
         }
@@ -66,10 +67,10 @@ export class SensorsService {
     });
   }
 
-  sensorTemperatureTree() {
+  sensorTemperatureTree(): Observable<SensorTemperatureType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorTemperatureType = {
           title: 'Sala',
           temperature: this.generateTemperature(30, 42),
         }
@@ -78,10 +79,10 @@ export class SensorsService {
     });
   }
 
-  sensorConsumptionTree() {
+  sensorConsumptionTree(): Observable<SensorConsumptionType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorConsumptionType = {
           title: 'Sala',
           consumption: this.generateConsumption(2, 5)
         }
@@ -90,10 +91,10 @@ export class SensorsService {
     });
   }
 
-  sensorTemperatureFour() {
+  sensorTemperatureFour(): Observable<SensorTemperatureType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorTemperatureType = {
           title: 'Cozinha',
           temperature: this.generateTemperature(30, 42),
         }
@@ -102,10 +103,10 @@ export class SensorsService {
     });
   }
 
-  sensorConsumptionFour() {
+  sensorConsumptionFour(): Observable<SensorConsumptionType> {
     return new Observable((subscribe) => {
       setInterval(() => {
-        const values = {
+        const values: SensorConsumptionType = {
           title: 'Cozinha',
           consumption: this.generateConsumption(2, 5)
         }
