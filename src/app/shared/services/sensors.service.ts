@@ -11,11 +11,11 @@ export class SensorsService {
 
   constructor() { }
 
-  generateConsumption(min: number, max: number) {
+  generateConsumption(min: number, max: number): string {
     return (Math.random() * (max - min) + min).toFixed(2);
   }
 
-  generateTemperature(min: number, max: number) {
+  generateTemperature(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
