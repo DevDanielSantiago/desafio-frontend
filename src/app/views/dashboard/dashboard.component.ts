@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { SensorsService } from '../../shared/services/sensors.service';
 
-import { chartColours, chartLabels, chartLegend, chartOptions, chartType } from './chart/config';
+import { chartColours, chartLabels, chartLegend, chartOptions, chartType } from './config/charts';
+import { initialSensorState } from './config/sensor';
 import { ChartColorsType, ChartDataType } from './models/chart';
 
 import { statusSensorType } from './models/sensor';
